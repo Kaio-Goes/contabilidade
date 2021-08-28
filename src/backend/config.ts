@@ -1,4 +1,6 @@
-import firebase from "firebase"
+import firebase from "firebase/app"
+import 'firebase/auth'
+import 'firebase/storage'
 import 'firebase/firestore'
 
 if(!firebase.apps.length) {
@@ -9,4 +11,11 @@ if(!firebase.apps.length) {
     })
 }
 
-export default firebase
+const app = firebase.app()
+const auth = firebase.auth()
+const db = firebase.firestore()
+const now = firebase.firestore.Timestamp.now()
+const storage = firebase.storage()
+
+
+export {firebase, auth, db, now, storage}

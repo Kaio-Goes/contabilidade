@@ -1,4 +1,4 @@
-import firebase from "../config"
+import {firebase} from "../config"
 import Servico from "../../core/Servicos"
 import ProcessoRepositorio from "../../core/ProcessoRepositorio"
 
