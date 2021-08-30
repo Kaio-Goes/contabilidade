@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import LoginForm from '../components/FormularioLogin'
+import LoginForm from '../components/LoginForm'
 
 const LoginPage: React.FC = () => {
     return (

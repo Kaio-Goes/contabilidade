@@ -7,11 +7,12 @@ import useClientes from "../hooks/useCliente";
 import { Fragment, useContext, useEffect } from 'react'
 import Head from 'next/head'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { auth } from "../backend/config";
 
 
 
 export default function Processo() {
-  
+
   const { formulario,
     formularios,
     selecionarFormulario,
@@ -69,12 +70,12 @@ export default function Processo() {
                               className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             >
                               <Menu.Item>
-                                <a
-                                  href="#"
-                                  className='block px-4 py-2 text-sm text-gray-700'
+                                <button
+                                  onClick={() => auth.signOut()}
+                                  className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 pairar: bg-indigo-500 foco: contorno-nenhum foco: border-indigo-700 foco: sombra-contorno-indigo ativo: bg-indigo-700 transição duração-150 facilidade-in-out "
                                 >
                                   Sign out
-                                                                </a>
+                                </button>
                               </Menu.Item>
                             </Menu.Items>
                           </Transition>
