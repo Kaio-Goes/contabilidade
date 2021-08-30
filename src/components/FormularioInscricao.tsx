@@ -28,7 +28,7 @@ const SignUpForm: React.FC = () => {
         return auth
             .createUserWithEmailAndPassword(email, password)
             .then((response) => {
-                return createUser({ uid: response.user.uid, email, name });
+                return createUser({ uid: response.user.uid, email, password, name });
             })
             .catch((error) => {
                 return { error };
