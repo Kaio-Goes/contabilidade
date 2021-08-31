@@ -1,8 +1,5 @@
-import { GetServerSideProps } from 'next';
 import Link from 'next/link'
 import SignUpForm from '../components/SignUpForm'
-import { getTeamName } from '../services/team';
-
 
 const SignUpPage: React.FC = () => {
     return (
@@ -24,22 +21,4 @@ const SignUpPage: React.FC = () => {
         </div>
     )
 }
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const { teamId, email } = context.query;
-    let teamName;
-
-    if (!teamId) {
-        return { props: {} };
-    }
-
-    if (teamId) {
-        teamName = await getTeamName(teamId as string);
-    }
-
-    return {
-        props: { teamId, teamName, email: email || '' },
-    };
-};
-
 export default SignUpPage;
