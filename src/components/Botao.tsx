@@ -3,6 +3,7 @@ interface BotaoProps {
     className?: string
     children: any
     onClick?: () => void
+    isLoading?: boolean
 }
 
 export default function Botao(props: BotaoProps) {
