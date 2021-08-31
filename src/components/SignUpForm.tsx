@@ -71,10 +71,10 @@ const SignUpForm = ({ teamId, email }: Props) => {
                     type="text"
                     name="name"
                     {...register('name', {
-                        required: 'Please enter an name',
+                        required: 'Por favor digite seu nome',
                         minLength: {
                             value: 3,
-                            message: 'name should have at least 3 characters',
+                            message: 'É permitido no mínimo 3 caracteres',
                         },
                     })}
                 />
@@ -97,11 +97,11 @@ const SignUpForm = ({ teamId, email }: Props) => {
                         type="email"
                         name="email"
                         {...register('email', {
-                            required: 'Please enter an email',
+                            required: 'Por favor digite seu e-mail',
                             pattern: {
                                 value:
                                     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                message: 'Not a valid email',
+                                message: 'E-mail não é valido',
                             },
                         })}
                     />
@@ -126,10 +126,10 @@ const SignUpForm = ({ teamId, email }: Props) => {
                         type="password"
                         name="password"
                         {...register('password', {
-                            required: 'Please enter a password',
+                            required: 'Por favor digite sua senha',
                             minLength: {
                                 value: 6,
-                                message: 'Should have at least 6 characters',
+                                message: 'É permitido no mínimo 6 caracteres',
                             },
                         })}
                     />
@@ -143,12 +143,7 @@ const SignUpForm = ({ teamId, email }: Props) => {
 
             <div className="mt-4">
                 <span className="block w-full rounded-md shadow-sm">
-                    <button
-                        type="submit"
-                        className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-                    >
-                        Sign up
-                    </button>
+                <Button cor="purple" title="Inscrever-se" type="submit" isLoading={isLoading} />
                 </span>
             </div>
         </form>

@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
 
     // useEffect(() => {
     //     if (user) {
-    //         push('/dashboard');
+    //         push('/processo');
     //     }
     // }, [user, push]);
 
@@ -59,11 +59,11 @@ const LoginForm: React.FC = () => {
                         type="email"
                         name="email"
                         {...register('email', {
-                            required: 'Please enter an email',
+                            required: 'Por favor insira o e-mail',
                             pattern: {
                                 value:
                                     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                message: 'Not a valid email',
+                                message: 'E-mail não é válido',
                             },
                         })}
                     />
@@ -80,7 +80,7 @@ const LoginForm: React.FC = () => {
                     className="block text-sm font-medium leading-5 text-gray-700"
                 >
                     Password
-          </label>
+                </label>
                 <div className="mt-1 rounded-md">
                     <input
                         id="password"
@@ -88,10 +88,10 @@ const LoginForm: React.FC = () => {
                         type="password"
                         name="password"
                         {...register('password', {
-                            required: 'Please enter a password',
+                            required: 'Por favor digite sua senha',
                             minLength: {
                                 value: 6,
-                                message: 'Should have at least 6 characters',
+                                message: 'É permitido no mínimo 6 caracteres',
                             },
                         })}
                     />
@@ -110,20 +110,15 @@ const LoginForm: React.FC = () => {
                             href="#"
                             className="font-medium transition duration-150 ease-in-out text-royal-blue-600 hover:text-royal-blue-500 focus:outline-none focus:underline"
                         >
-                            Forgot your password?
-              </a>
+                            Esqueceu de sua senha?
+                    </a>
                     </Link>
                 </div>
             </div>
 
             <div className="mt-4">
                 <span className="block w-full rounded-md shadow-sm">
-                <button
-                        type="submit"
-                        className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
-                    >
-                        Entrar
-                    </button>
+                    <Button cor="purple" title="Login" type="submit" isLoading={isLoading} />
                 </span>
             </div>
         </form>
