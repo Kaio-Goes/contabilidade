@@ -11,7 +11,7 @@ const LoginPage: React.FC = () => {
                         {"Não tem uma conta?"}
                         <Link href="signup">
                             <a href="#" className="text-blue-500">
-                                Sign Up
+                                Inscrever-se
                             </a>
                         </Link>
                     </p>
