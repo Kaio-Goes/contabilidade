@@ -87,7 +87,7 @@ const SignUpForm = ({ teamId, email }: Props) => {
                     htmlFor="email"
                     className="block text-sm font-medium leading-5 text-gray-700"
                 >
-                    Email address
+                    Endeço de e-mail
           </label>
                 <div className="mt-1 rounded-md">
                     <input
