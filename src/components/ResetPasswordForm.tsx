@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import Botao from '../components/Botao'
+import Button from './elements/Button';
 const ResetPasswordForm: React.FC = () => {
     const {
         register,
@@ -64,8 +65,7 @@ const ResetPasswordForm: React.FC = () => {
 
             <div className="mt-4">
                 <span className="block w-full rounded-md shadow-sm">
-                    <Botao cor="purple">
-                        Enviar link de redefinição</Botao>
+                    <Button cor="purple" title="Enviar link de redefinição" type="submit" isLoading={isLoading} />
                 </span>
             </div>
         </form>
