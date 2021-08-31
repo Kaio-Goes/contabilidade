@@ -7,9 +7,8 @@ import useClientes from "../hooks/useCliente";
 import { Fragment, useContext, useEffect } from 'react'
 import Head from 'next/head'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { auth } from "../backend/config";
-
-
+import { useRequireAuth } from '../hooks/useRequireAuth'
+import { useAuth } from '../hooks/useAuth'
 
 export default function Processo() {
 
@@ -22,6 +21,8 @@ export default function Processo() {
     tabelaVisivel,
     exibirTabela
   } = useClientes()
+
+  const auth = useRequireAuth() 
 
   // useEffect(() => {
   //   api.get('/users')
@@ -74,7 +75,7 @@ export default function Processo() {
                                   onClick={() => auth.signOut()}
                                   className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 pairar: bg-indigo-500 foco: contorno-nenhum foco: border-indigo-700 foco: sombra-contorno-indigo ativo: bg-indigo-700 transição duração-150 facilidade-in-out "
                                 >
-                                  Sign out
+                                  logout
                                 </button>
                               </Menu.Item>
                             </Menu.Items>
