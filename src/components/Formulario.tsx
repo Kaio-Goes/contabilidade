@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import { AuthContext } from "../contexts/AuthContext";
 import Servico from "../core/Servicos";
 import Botao from "./Botao";
 import Entrada from "./Entrada";
