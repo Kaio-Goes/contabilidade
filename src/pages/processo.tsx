@@ -22,7 +22,7 @@ export default function Processo() {
     exibirTabela
   } = useProcesso()
 
-  const auth = useRequireAuth() 
+  const auth = useRequireAuth()
 
   // useEffect(() => {
   //   api.get('/users')
@@ -90,34 +90,36 @@ export default function Processo() {
           </>
         )}
       </Disclosure>
-      <main className={`
+      <div>
+        <main className={`
       flex justify-center items-center h-screen
-      bg-gradient-to-r from-blue-500 to-purple-500
+      bg-gradient-to-r from-blue-400 to-purple-400
       text-white 
     `}>
-        <Layout titulo="Criar Processo">
-          {tabelaVisivel ? (
-            <>
-              <div className="flex justify-end">
-                <Botao cor="green" className="mb-4" onClick={novoFormulario}>
-                  Novo Processo
+          <Layout titulo="Criar Processo">
+            {tabelaVisivel ? (
+              <>
+                <div className="flex justify-end">
+                  <Botao cor="green" className="mb-4" onClick={novoFormulario}>
+                    Novo Processo
               </Botao>
-              </div>
-              <Tabela formulario={formularios} formularioSelecionado={selecionarFormulario}
-                formularioExcluido={excluirFormulario}
-              />
-            </>
-          ) : (
-              <Formulario
-                formulario={formulario}
-                formularioMudou={salvarFormulario}
-                cancelado={exibirTabela}
-              />
-            )}
+                </div>
+                <Tabela formulario={formularios} formularioSelecionado={selecionarFormulario}
+                  formularioExcluido={excluirFormulario}
+                />
+              </>
+            ) : (
+                <Formulario
+                  formulario={formulario}
+                  formularioMudou={salvarFormulario}
+                  cancelado={exibirTabela}
+                />
+              )}
 
-        </Layout>
+          </Layout>
 
-      </main>
+        </main>
+      </div>
     </div>
   )
 }
