@@ -4,7 +4,7 @@ import Servico from "../core/Servicos"
 import ProcessoRepositorio from "../core/ProcessoRepositorio"
 import useTabelaOuForm from "./useTabelaOuForm"
 
-export default function useClientes() {
+export default function useProcesso() {
     const repo: ProcessoRepositorio = new ColecaoProcesso
 
     const { tabelaVisivel, exibirFormulario, exibirTabela, formularioVisivel} = useTabelaOuForm()

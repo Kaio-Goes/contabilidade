@@ -3,7 +3,7 @@ import Formulario from "../components/Formulario";
 import Layout from "../components/Layout";
 import Tabela from "../components/Tabela";
 import { Logout } from "../components/Icones"
-import useClientes from "../hooks/useCliente";
+import useProcesso from "../hooks/useProcesso";
 import { Fragment, useContext, useEffect } from 'react'
 import Head from 'next/head'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
@@ -20,7 +20,7 @@ export default function Processo() {
     salvarFormulario,
     tabelaVisivel,
     exibirTabela
-  } = useClientes()
+  } = useProcesso()
 
   const auth = useRequireAuth() 
 
