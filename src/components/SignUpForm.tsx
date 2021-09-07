@@ -13,11 +13,10 @@ interface SignUpData {
 }
 
 interface Props {
-    teamId?: string;
     email?: string;
 }
 
-const SignUpForm = ({ teamId, email }: Props) => {
+const SignUpForm = ({  email }: Props) => {
     const { register, handleSubmit, formState: { errors } } = useForm({
         defaultValues: {
             name: '',
@@ -35,7 +34,7 @@ const SignUpForm = ({ teamId, email }: Props) => {
     const onSubmit = (data: SignUpData): void => {
         setIsLoading(true);
         setError(null);
-        signUp(data, teamId).then((response: { error?: { message: string } }) => {
+        signUp(data ).then((response: { error?: { message: string } }) => {
             setIsLoading(false);
             if (response?.error) {
                 setError(response.error);
