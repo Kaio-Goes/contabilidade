@@ -15,7 +15,7 @@ export default class ColecaoProcesso implements ProcessoRepositorio {
         },
         fromFirestore(snapshot: firebase.firestore.QueryDocumentSnapshot, options: firebase.firestore.SnapshotOptions): Servico {
             const dados = snapshot?.data(options)
-            return new Servico(dados.Numero_Servico, dados.Nome_Cliente, dados.Descricao_Servico,dados.status, snapshot?.id)
+            return new Servico(dados.Numero_Servico, dados.Nome_Cliente, dados.Descricao_Servico,dados.Status, snapshot?.id)
         }
     }
 
@@ -55,7 +55,7 @@ export default class ColecaoProcesso implements ProcessoRepositorio {
     
 
     private colecao() {
-        return firebase.firestore().collection('servicos')
+        return firebase.firestore().collection('Servicos')
         .withConverter(this.#conversor)
     }
 } 

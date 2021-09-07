@@ -46,7 +46,7 @@ const useAuthProvider = () => {
     const createUser = async (currentUser: User) => {
         try {
             return db
-                .collection('users')
+                .collection('Usuarios')
                 .doc(currentUser.uid)
                 .set({ ...currentUser }, { merge: true });
         } catch (error) {
@@ -56,7 +56,7 @@ const useAuthProvider = () => {
 
     const updateUser = async ({ id, data }) => {
         try {
-            await db.collection('users').doc(id).update(data);
+            await db.collection('Usuarios').doc(id).update(data);
             setUser({ ...user, ...data });
         } catch (error) {
             return { error };
@@ -119,7 +119,7 @@ const useAuthProvider = () => {
 
     // Get the user data from Firestore
     const getUserAdditionalData = async (user: firebase.User) => {
-        db.collection('users')
+        db.collection('Usuarios')
             .doc(user.uid)
             .get()
             .then(function (doc) {
@@ -151,7 +151,7 @@ const useAuthProvider = () => {
     useEffect(() => {
         if (user?.uid) {
             // Subscribe to user document
-            db.collection('users')
+            db.collection('Usuarios')
                 .doc(user.uid)
                 .onSnapshot((doc) => setUser(doc.data()));
         }
