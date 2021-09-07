@@ -14,10 +14,10 @@ const DashBoardPage: React.FC = () => {
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                     <div className="text-center mt-24">
                         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                            {`Bem-vindo contador ${auth.user.name}!`}
+                            {`Bem-vindo contador ${auth.user.Nome}!`}
                         </h2>
                         <p className="mt-2 text-center text-md text-gray-600">
-                            {`Esse é seu e-mail para logar no sistema ${auth.user.email}`}
+                            {`Esse é seu e-mail para logar no sistema ${auth.user.Email}`}
                         </p>
                         <br />
                         <Botao cor="purple" onClick={() => Router.push('/login')}>Fazer login</Botao>

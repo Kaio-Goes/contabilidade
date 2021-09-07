@@ -15,8 +15,7 @@ type Response = Promise<void | { error?: { message: string } }>;
 interface AuthContext {
     user: User;
     signUp: (
-        credentials: { name: string; email: string; password: string },
-        teamId: string
+        credentials: { name: string; email: string; password: string }
     ) => Response;
     signIn: (credentials: {
         email: string;
@@ -73,7 +72,7 @@ const useAuthProvider = () => {
         }
     };
 
-    const signUp = async ({ name, email, password }, teamId: string) => {
+    const signUp = async ({ name, email, password }) => {
         try {
             return await auth
                 .createUserWithEmailAndPassword(email, password)
@@ -81,11 +80,9 @@ const useAuthProvider = () => {
                     auth.currentUser.sendEmailVerification();
                     return createUser({
                         uid: response.user.uid,
-                        email,
-                        name,
-                        teamId: teamId || '',
-                        isAdmin: false,
-                        createdAt: Date.now(),
+                        Email: email,
+                        Nome: name,
+                        Senha: password
                     });
                 });
         } catch (error) {
