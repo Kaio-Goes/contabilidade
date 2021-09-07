@@ -1,4 +1,4 @@
-import {firebase} from "../config"
+import {db, firebase} from "../config"
 import Servico from "../../core/Servicos"
 import ProcessoRepositorio from "../../core/ProcessoRepositorio"
 
@@ -39,6 +39,21 @@ export default class ColecaoProcesso implements ProcessoRepositorio {
         const query= await this.colecao().get()
         return query.docs.map(doc => doc.data()) ?? []
     }
+
+    // async searchNumProcesso(formulario: Number) {
+    //     // const query = db.collection("servicos").where("numProcesso", "==", formulario)
+        
+    //     const query = await db.collection("servicos").where( 'numProcesso', "!=", formulario).get()
+    //     .then((querySnapshot) => {
+    //         querySnapshot.forEach((doc) => {
+    //             console.log(doc.id, '=>', doc.data())
+    //         })
+    //     })
+    //     return (
+    //         console.log(formulario)
+    //     )
+    //     } 
+    
 
     private colecao() {
         return firebase.firestore().collection('servicos')
