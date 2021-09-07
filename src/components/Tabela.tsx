@@ -15,10 +15,9 @@ export default function Tabela(props: TabelaProps) {
         return (
             <tr>
                 <th className="text-left p-4">Código</th>
-                <th className="text-left p-4">Nome</th>
-                <th className="text-left p-4">Idade</th>
-                <th className="text-left p-4">Numero do Processo</th>
-                <th className="text-left p-4">Observação</th>
+                <th className="text-left p-4">Numero</th>
+                <th className="text-left p-4">Cliente</th>
+                <th className="text-left p-4">Descrição</th>
                 <th className="text-left p-4">Status</th>
                 {exibirAcoes ? <th className="p-4">Ações</th> : false}
 
@@ -34,10 +33,9 @@ export default function Tabela(props: TabelaProps) {
                     ${i % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}
                 `}>
                     <td className="text-left p-4">{formulario.id}</td>
-                    <td className="text-left p-4">{formulario.nome}</td>
-                    <td className="text-left p-4">{formulario.idade}</td>
-                    <td className="text-left p-4">{formulario.numProcesso}</td>
-                    <td className="text-left p-4">{formulario.observacao}</td>
+                    <td className="text-left p-4">{formulario.Numero_Servico}</td>
+                    <td className="text-left p-4">{formulario.Nome_Cliente}</td>
+                    <td className="text-left p-4">{formulario.Descricao_Servico}</td>
                     <td className="text-left p-4">{formulario.status}</td>
                     {exibirAcoes ? renderizarAcoes(formulario) : false}
                 </tr>

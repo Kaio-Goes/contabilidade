@@ -7,16 +7,15 @@ export default class ColecaoProcesso implements ProcessoRepositorio {
     #conversor = {
         toFirestore(formulario: Servico) {
             return {
-                nome: formulario.nome,
-                idade: formulario.idade,
-                numProcesso: formulario.numProcesso,
-                observacao: formulario.observacao,
+                Numero_Servico: formulario.Numero_Servico,
+                Nome_Cliente: formulario.Nome_Cliente,
+                Descricao_Servico: formulario.Descricao_Servico,
                 status: formulario.status
             }
         },
         fromFirestore(snapshot: firebase.firestore.QueryDocumentSnapshot, options: firebase.firestore.SnapshotOptions): Servico {
             const dados = snapshot?.data(options)
-            return new Servico(dados.nome, dados.idade, dados.numProcesso, dados.observacao, dados.status, snapshot?.id)
+            return new Servico(dados.Numero_Servico, dados.Nome_Cliente, dados.Descricao_Servico,dados.status, snapshot?.id)
         }
     }
 
