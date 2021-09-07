@@ -19,15 +19,11 @@ export default function Formulario(props: FormularioProps) {
     const [nomeCliente, setNomeCliente] = useState(props.formulario?.Nome_Cliente ?? '')
     const [descricao, setDescricao] = useState(props.formulario?.Descricao_Servico ?? '')
     //const [status, setStatus] = useState(props.cliente?.status ?? '')
-    const [value, setValue] = useState(props.formulario?.status)
+    const [value, setValue] = useState(props.formulario?.Status)
 
     console.log(props.formularioMudou)
     return (
         <div>
-            {id ? (
-                <Entrada somenteLeitura texto="Código" valor={id} className="mb-4" />
-            ) : false}
-
             <Entrada texto="Numero do Serviço" tipo="number" valor={numeroServico} valorMudou={setNumeroServico} className="mb-4" />
             <Entrada texto="Nome do Cliente" valor={nomeCliente} valorMudou={setNomeCliente} className="mb-4" />
             <Entrada texto="Descrição do Serviço" valor={descricao} valorMudou={setDescricao} className="mb-4" />

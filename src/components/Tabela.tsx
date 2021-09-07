@@ -14,7 +14,6 @@ export default function Tabela(props: TabelaProps) {
     function renderizarCabecalho() {
         return (
             <tr>
-                <th className="text-left p-4">Código</th>
                 <th className="text-left p-4">Numero</th>
                 <th className="text-left p-4">Cliente</th>
                 <th className="text-left p-4">Descrição</th>
@@ -32,11 +31,10 @@ export default function Tabela(props: TabelaProps) {
                     className={`
                     ${i % 2 === 0 ? 'bg-purple-200' : 'bg-purple-100'}
                 `}>
-                    <td className="text-left p-4">{formulario.id}</td>
                     <td className="text-left p-4">{formulario.Numero_Servico}</td>
                     <td className="text-left p-4">{formulario.Nome_Cliente}</td>
                     <td className="text-left p-4">{formulario.Descricao_Servico}</td>
-                    <td className="text-left p-4">{formulario.status}</td>
+                    <td className="text-left p-4">{formulario.Status}</td>
                     {exibirAcoes ? renderizarAcoes(formulario) : false}
                 </tr>
             )

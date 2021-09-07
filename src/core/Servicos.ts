@@ -34,7 +34,7 @@ export default class Servico {
         return this.#Descricao_Servico
     }
 
-    get status() {
+    get Status() {
         return this.#Status
     }
 }

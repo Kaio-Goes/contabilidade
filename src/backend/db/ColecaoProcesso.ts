@@ -10,7 +10,7 @@ export default class ColecaoProcesso implements ProcessoRepositorio {
                 Numero_Servico: formulario.Numero_Servico,
                 Nome_Cliente: formulario.Nome_Cliente,
                 Descricao_Servico: formulario.Descricao_Servico,
-                status: formulario.status
+                Status: formulario.Status
             }
         },
         fromFirestore(snapshot: firebase.firestore.QueryDocumentSnapshot, options: firebase.firestore.SnapshotOptions): Servico {
