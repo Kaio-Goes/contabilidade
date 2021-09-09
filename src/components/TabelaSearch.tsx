@@ -8,13 +8,9 @@ interface TabelaSearchProps {
 
 export default function TabelaSearch(props: TabelaSearchProps) {
     
-    
-    
-
-
     return (
         <div>
-            <h1>Numero do processo: {props.formulario}</h1>
+            <h1>Numero do Servico: {props.formulario}</h1>
         </div>
     )
 }

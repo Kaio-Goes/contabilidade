@@ -1,18 +1,19 @@
 interface SearchProps {
-    tipo?:'String'
+    tipo?: number
     texto: string
-    valor: any
+    valor: number
     className?: string
     valorMudou?: (valor: any) => void
 }
 
 export default function Entrada(props:  SearchProps) {
+
     return (
         <div className={`flex flex-col ${props.className}`}>
             <label className="mb-4">
                 {props.texto}
             </label>
-            <input type={props.tipo ?? 'number'}
+            <input 
                 value={props.valor}
                 onChange={e => props.valorMudou?.(e.target.value)}
                 className={`
