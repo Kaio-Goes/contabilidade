@@ -1,7 +1,7 @@
 interface SearchProps {
     tipo?: number
     texto: string
-    valor: number
+    valor: any
     className?: string
     valorMudou?: (valor: any) => void
 }
@@ -22,6 +22,7 @@ export default function Entrada(props:  SearchProps) {
                     }
                 `}
                 />
+                
         </div>
     )
 }

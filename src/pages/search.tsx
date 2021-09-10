@@ -2,13 +2,10 @@ import Head from 'next/head'
 import Servico from '../core/Servicos'
 import Search from "../components/Search";
 import Botao from '../components/Botao'
-import { User } from "../components/Icones";
+import { SearchIcon } from "../components/Icones";
 import Router from 'next/router';
 import { useEffect, useState } from 'react';
-import TabelaSearch from '../components/TabelaSearch'
 import useServico from '../hooks/useServico'
-import ProcessoRepositorio from '../core/ServicoRepositorio';
-import ColecaoProcesso from '../backend/db/ColecaoServico';
 import { db } from '../backend/config';
 
 interface SearchNumProcesso {
@@ -18,19 +15,15 @@ interface SearchNumProcesso {
 
 export default function SearchNum(props: SearchNumProcesso) {
 
-    const [search, setSearch] = useState()
+    const [search, setSearch] = useState('')
     // const num = new ColecaoProcesso
-
-    const { formularios, selecionarFormulario, salvarFormulario, exibirTabela } = useServico()
 
     let [bira, setBira] = useState({})
 
-    const alo = function (numero: Servico) {
-        console.log(numero)
+    const alo = function (numero) {
         const query = db.collection("Servicos").where('Numero_Servico', "==", numero).get()
             .then((querySnapshot) => {
                 // let user
-
 
                 querySnapshot.forEach((doc) => {
                     console.log(doc.id, '=>', doc.data(), '=>', numero)
@@ -68,7 +61,7 @@ export default function SearchNum(props: SearchNumProcesso) {
                     <Search texto="Digite o número do Serviço" valor={search} valorMudou={setSearch} />
                     <br />
                     <div className="flex justify-center">
-                        <Botao cor="purple" onClick={() => alo(search)}>Pesquisar</Botao>
+                        <Botao cor="purple" onClick={() => alo(search)}>Pesquise</Botao>
                     </div>
                     {/* <pre>{(JSON.stringify(bira, null, 1))}</pre> */}
                     <br />
@@ -82,7 +75,7 @@ export default function SearchNum(props: SearchNumProcesso) {
             `}>
                                     <tr>
                                         <th className="font">{key.replace('_', ' do ').replace('ico', 'iço')
-                                        .replace('Nu', 'Nú').replace('cao', 'ção')}
+                                            .replace('Nu', 'Nú').replace('cao', 'ção')}
                                         </th>
                                     </tr>
                                 </thead>
