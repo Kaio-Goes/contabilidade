@@ -6,7 +6,7 @@ import { User } from "../components/Icones";
 import Router from 'next/router';
 import { useEffect, useState } from 'react';
 import TabelaSearch from '../components/TabelaSearch'
-import useProcesso from '../hooks/useProcesso'
+import useServico from '../hooks/useServico'
 import ProcessoRepositorio from '../core/ServicoRepositorio';
 import ColecaoProcesso from '../backend/db/ColecaoServico';
 import { db } from '../backend/config';
@@ -21,7 +21,7 @@ export default function SearchNum(props: SearchNumProcesso) {
     const [search, setSearch] = useState()
     // const num = new ColecaoProcesso
 
-    const { formularios, selecionarFormulario, salvarFormulario, exibirTabela } = useProcesso()
+    const { formularios, selecionarFormulario, salvarFormulario, exibirTabela } = useServico()
 
     let [bira, setBira] = useState({})
 

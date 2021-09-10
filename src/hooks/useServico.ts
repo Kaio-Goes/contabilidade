@@ -4,7 +4,7 @@ import Servico from "../core/Servicos"
 import ServicoRepositorio from "../core/ServicoRepositorio"
 import useTabelaOuForm from "./useTabelaOuForm"
 
-export default function useProcesso() {
+export default function useServico() {
     const repo: ServicoRepositorio = new ColecaoServico
 
     const { tabelaVisivel, exibirFormulario, exibirTabela, formularioVisivel} = useTabelaOuForm()
