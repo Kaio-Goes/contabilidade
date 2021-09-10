@@ -43,8 +43,6 @@ export default function SearchNum(props: SearchNumProcesso) {
         return query
     }
 
-
-
     // async searchNumProcesso(formulario: number): Promise<any> {
     //     const query = await db.collection("Servicos").where('Numero_Servico', "!=", formulario).get()
     //         .then((querySnapshot) => {
@@ -72,7 +70,30 @@ export default function SearchNum(props: SearchNumProcesso) {
                     <div className="flex justify-center">
                         <Botao cor="purple" onClick={() => alo(search)}>Pesquisar</Botao>
                     </div>
-                    <pre>{(JSON.stringify(bira, null, 1))}</pre>
+                    {/* <pre>{(JSON.stringify(bira, null, 1))}</pre> */}
+                    <br />
+                    <div>
+
+                        {Object.keys(bira).map((key, i) => (
+                            <table className="w-full rounded-xl overflow-hidden" key={i} >
+                                <thead className={`
+                text-gray-100   
+                bg-gradient-to-r from bg-purple-500 to-purple-800
+            `}>
+                                    <tr>
+                                        <th className="font">{key.replace('_', ' do ').replace('ico', 'iço')
+                                        .replace('Nu', 'Nú').replace('cao', 'ção')}
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>{bira[key]}</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        ))}
+                    </div>
                 </div>
 
                 <br />
