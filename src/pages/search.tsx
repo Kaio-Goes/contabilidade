@@ -7,8 +7,8 @@ import Router from 'next/router';
 import { useEffect, useState } from 'react';
 import TabelaSearch from '../components/TabelaSearch'
 import useProcesso from '../hooks/useProcesso'
-import ProcessoRepositorio from '../core/ProcessoRepositorio';
-import ColecaoProcesso from '../backend/db/ColecaoProcesso';
+import ProcessoRepositorio from '../core/ServicoRepositorio';
+import ColecaoProcesso from '../backend/db/ColecaoServico';
 import { db } from '../backend/config';
 
 interface SearchNumProcesso {
