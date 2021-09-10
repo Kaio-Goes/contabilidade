@@ -2,7 +2,7 @@ import {db, firebase} from "../config"
 import Servico from "../../core/Servicos"
 import ProcessoRepositorio from "../../core/ProcessoRepositorio"
 
-export default class ColecaoProcesso implements ProcessoRepositorio {
+export default class ColecaoServico implements ProcessoRepositorio {
 
     #conversor = {
         toFirestore(formulario: Servico) {

@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import ColecaoProcesso from "../backend/db/ColecaoProcesso"
+import ColecaoServico from "../backend/db/ColecaoServico"
 import Servico from "../core/Servicos"
 import ProcessoRepositorio from "../core/ProcessoRepositorio"
 import useTabelaOuForm from "./useTabelaOuForm"
 
 export default function useProcesso() {
-    const repo: ProcessoRepositorio = new ColecaoProcesso
+    const repo: ProcessoRepositorio = new ColecaoServico
 
     const { tabelaVisivel, exibirFormulario, exibirTabela, formularioVisivel} = useTabelaOuForm()
 
