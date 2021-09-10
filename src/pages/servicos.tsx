@@ -10,7 +10,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { useRequireAuth } from '../hooks/useRequireAuth'
 import { useAuth } from '../hooks/useAuth'
 
-export default function Processo() {
+export default function Servicos() {
 
   const { formulario,
     formularios,
@@ -96,12 +96,12 @@ export default function Processo() {
       bg-gradient-to-r from-blue-400 to-purple-400
       text-white 
     `}>
-          <Layout titulo="Criar Processo">
+          <Layout titulo="Lista de serviços">
             {tabelaVisivel ? (
               <>
                 <div className="flex justify-end">
                   <Botao cor="green" className="mb-4" onClick={novoFormulario}>
-                    Novo Processo
+                    Novo Serviço
               </Botao>
                 </div>
                 <Tabela formulario={formularios} formularioSelecionado={selecionarFormulario}
