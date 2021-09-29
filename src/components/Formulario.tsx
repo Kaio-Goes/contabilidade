@@ -3,6 +3,7 @@ import Servico from "../core/Servicos";
 import Botao from "./Botao";
 import Entrada from "./Entrada";
 import Status from "./Status"
+import {enviarEmail} from "../../functions/index"
 
 interface FormularioProps {
     formulario: Servico
@@ -15,7 +16,7 @@ export default function Formulario(props: FormularioProps) {
     //const {user} = useContext(AuthContext)
 
     const id = props.formulario?.id
-    const [numeroServico, setNumeroServico] = useState(props.formulario?.Numero_Servico ?? 0)
+    const [numeroServico, setNumeroServico] = useState(props.formulario?.Numero_Servico ?? '')
     const [nomeCliente, setNomeCliente] = useState(props.formulario?.Nome_Cliente ?? '')
     const [descricao, setDescricao] = useState(props.formulario?.Descricao_Servico ?? '')
     //const [status, setStatus] = useState(props.cliente?.status ?? '')
@@ -29,12 +30,24 @@ export default function Formulario(props: FormularioProps) {
             <Entrada texto="Descrição do Serviço" valor={descricao} valorMudou={setDescricao} className="mb-4" />
             {/* <Entrada texto="Status" valor={status} valorMudou={setStatus} /> */}
             <Status texto="Status" valor={value} valorMudou={setValue} />
-
             
+            <form action="https://us-central1-servicos-f5c6c.cloudfunctions.net/enviarEmail" method="post">
+                <label>Assunto:</label>
+                <input type="text" name="assunto"/>
+
+                <label>Destinatários:</label>
+                <input type="text" name="destinatarios"/>
+
+                <label>Mensagem:</label>
+                <input type="text" name="corpo"/>
+
+                <button type="submit">Enviar</button>
+            </form>
+
             <div className="flex justify-center mt-3">
                 <Botao cor="blue" className="mr-2" 
                     onClick={() => props.formularioMudou?.
-                        (new Servico(+numeroServico, nomeCliente, descricao,value, id))}>
+                        (new Servico(numeroServico, nomeCliente, descricao,value, id))}>
                     {id ? 'Alterar' : 'Salvar'}
                 </Botao>
                 <Botao onClick={props.cancelado}>Cancelar</Botao>

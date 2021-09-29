@@ -1,11 +1,11 @@
 export default class Servico {
     #id: string
-    #Numero_Servico: number
+    #Numero_Servico: string
     #Nome_Cliente: string
     #Descricao_Servico: string
     #Status: string
 
-    constructor(Numero_servico: number, Nome_Cliente: string, Descricao_Servico: string, Status: string, id: string = null) {
+    constructor(Numero_servico: string, Nome_Cliente: string, Descricao_Servico: string, Status: string, id: string = null) {
         this.#Numero_Servico = Numero_servico
         this.#Nome_Cliente = Nome_Cliente
         this.#Descricao_Servico = Descricao_Servico
@@ -15,7 +15,7 @@ export default class Servico {
     }
 
     static vazio() {
-        return new Servico(0, '', '', 'DEFAULT')
+        return new Servico('', '', '', 'DEFAULT')
     }
 
     get id() {
