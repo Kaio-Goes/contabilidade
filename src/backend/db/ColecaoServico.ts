@@ -10,12 +10,13 @@ export default class ColecaoServico implements ServicoRepositorio {
                 Numero_Servico: formulario.Numero_Servico,
                 Nome_Cliente: formulario.Nome_Cliente,
                 Descricao_Servico: formulario.Descricao_Servico,
+                Email_Cliente: formulario.Email_Cliente,
                 Status: formulario.Status
             }
         },
         fromFirestore(snapshot: firebase.firestore.QueryDocumentSnapshot, options: firebase.firestore.SnapshotOptions): Servico {
             const dados = snapshot?.data(options)
-            return new Servico(dados.Numero_Servico, dados.Nome_Cliente, dados.Descricao_Servico,dados.Status, snapshot?.id)
+            return new Servico(dados.Numero_Servico, dados.Nome_Cliente, dados.Descricao_Servico, dados.Email_Cliente, dados.Status, snapshot?.id)
         }
     }
 
