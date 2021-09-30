@@ -49,12 +49,16 @@ export default function SearchNum(props: SearchNumProcesso) {
     // }
 
     return (
-        <div className="min-h-screen flex flex-col justify-center bg-gray-200">
+        <div>
+            <Head>
+                <title>Pesquisar Serviço</title>
+            </Head>
+            <div className="min-h-screen flex flex-col justify-center bg-gray-200">
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                 <div className="text-center mt-24">
-                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Status do serviço</h2>
+                    <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Status do Serviço</h2>
                     <p className="mt-2 text-center text-md text-gray-600">
-                        {"Pesquise seu número de processo fornecido pelo contador"}
+                        {"Pesquise seu número de serviço fornecido pelo contador"}
                     </p>
                 </div>
                 <div className="mt-8 bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
@@ -92,5 +96,7 @@ export default function SearchNum(props: SearchNumProcesso) {
                 <br />
             </div>
         </div>
+        </div>
+        
     )
 }

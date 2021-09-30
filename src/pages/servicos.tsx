@@ -30,6 +30,10 @@ export default function Servicos() {
 
   return (
     <div>
+      <Head>
+        <title>Serviço</title>
+      </Head>
+      <div>
       <Disclosure as="nav" className="bg-gray-800">
         {({ open }) => (
           <>
@@ -120,6 +124,7 @@ export default function Servicos() {
 
         </main>
       </div>
+    </div>
     </div>
   )
 }
