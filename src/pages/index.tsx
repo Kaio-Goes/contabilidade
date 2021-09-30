@@ -21,13 +21,13 @@ export default function Home() {
           <div className="mt-8 h-32 w-full space-y-3">
             <h1 className="text-center text-lg text-purple-800">Cliente</h1>
             <div className="w-full h-6 bg-gray-200 rounded-full animate-pulse">
-              <p className="text-center text-sm text-purple-800">Entre aqui se você</p>
+              <p className="text-center text-sm text-purple-800">Entre aqui se você for cliente</p>
             </div>
             <div className="w-full h-6 bg-gray-200 rounded-full animate-pulse">
-              <p className="text-center text-sm text-purple-800">for cliente</p>
+              <p className="text-center text-sm text-purple-800">Pesquise o número de seu serviço</p>
             </div>
           </div>
-          <Botao className="w-60" cor="purple">Entrar</Botao>
+          <Botao className="w-60" cor="purple" onClick={() => Router.push('/search')}>Entrar</Botao>
         </div>
 
         <div className="p-6"></div>
@@ -39,10 +39,10 @@ export default function Home() {
           <div className="mt-8 h-32 w-full space-y-3">
             <h1 className="text-center text-lg text-purple-800">Contador</h1>
             <div className="w-full h-6 bg-gray-200 rounded-full animate-pulse">
-              <p className="text-center text-sm text-purple-800">Entre aqui se você</p>
+              <p className="text-center text-sm text-purple-800">Entre aqui se você for contador</p>
             </div>
             <div className="w-full h-6 bg-gray-200 rounded-full animate-pulse">
-              <p className="text-center text-sm text-purple-800">for contador</p>
+              <p className="text-center text-sm text-purple-800">Administre seus serviços</p>
             </div>
           </div>
           <Botao className="w-60" cor="purple" onClick={() => Router.push('/login')}>Login</Botao>

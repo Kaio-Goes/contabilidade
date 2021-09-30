@@ -50,7 +50,7 @@ const LoginForm: React.FC = () => {
                     htmlFor="email"
                     className="block text-sm font-medium leading-5 text-gray-700"
                 >
-                    Endeço de e-mail
+                    Endereço de e-mail
           </label>
                 <div className="mt-1 rounded-md">
                     <input
@@ -79,7 +79,7 @@ const LoginForm: React.FC = () => {
                     htmlFor="password"
                     className="block text-sm font-medium leading-5 text-gray-700"
                 >
-                    Password
+                    Senha
                 </label>
                 <div className="mt-1 rounded-md">
                     <input
