@@ -4,6 +4,7 @@ import Botao from "./Botao";
 import Entrada from "./Entrada";
 import Status from "./Status"
 import {enviarEmail} from "../../functions/index"
+import Email from "./Email";
 
 interface FormularioProps {
     formulario: Servico
@@ -30,7 +31,8 @@ export default function Formulario(props: FormularioProps) {
             <Entrada texto="Nome do Cliente" valor={nomeCliente} valorMudou={setNomeCliente} className="mb-4" />
             <Entrada texto="Descrição do Serviço" valor={descricao} valorMudou={setDescricao} className="mb-4" />
             {/* <Entrada texto="Status" valor={status} valorMudou={setStatus} /> */}
-            <Entrada texto="E-mail do Cliente (exemplo@exemplo.com)" valor={emailCliente} valorMudou={setemailCliente} className="mb-4" />
+            <Email tipo="email" texto="E-mail do Cliente (exemplo@exemplo.com)" valor={emailCliente} valorMudou={setemailCliente} className="mb-4" ></Email>
+            {/* <Entrada texto="E-mail do Cliente (exemplo@exemplo.com)" valor={emailCliente} valorMudou={setemailCliente} className="mb-4" /> */}
             <Status texto="Status" valor={value} valorMudou={setValue} />
             
                 {/* <form action="https://us-central1-servicos-f5c6c.cloudfunctions.net/enviarEmail" method="post">
