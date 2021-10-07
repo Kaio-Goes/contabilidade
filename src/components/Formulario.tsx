@@ -26,7 +26,7 @@ export default function Formulario(props: FormularioProps) {
     console.log(props.formularioMudou)
     return (
         <div>
-            <Entrada texto="Numero do Serviço" tipo="number" valor={numeroServico} valorMudou={setNumeroServico} className="mb-4" />
+            <Entrada texto="Número do Serviço" tipo="number" valor={numeroServico} valorMudou={setNumeroServico} className="mb-4" />
             <Entrada texto="Nome do Cliente" valor={nomeCliente} valorMudou={setNomeCliente} className="mb-4" />
             <Entrada texto="Descrição do Serviço" valor={descricao} valorMudou={setDescricao} className="mb-4" />
             {/* <Entrada texto="Status" valor={status} valorMudou={setStatus} /> */}
