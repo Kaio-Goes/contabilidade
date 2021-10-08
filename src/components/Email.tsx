@@ -16,10 +16,11 @@ export default function Email(props:  EntradaProps) {
             <label className="mb-2">
                 {props.texto}
             </label>
-            <input type={props.tipo ?? 'text'}
+            <input type={props.tipo ?? 'email'}
                 value={props.valor}
                 readOnly={props.somenteLeitura}
                 onChange={e => props.valorMudou?.(e.target.value)}
+                required
                 className={`
                     border border-purple-500 rounded-lg
                     focus: outline-none bg-gray-0 px-4 py-2

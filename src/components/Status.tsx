@@ -17,9 +17,9 @@ export default function Constructor(props: statusServicos) {
                 onChange={e => props.valorMudou?.(e.target.value)}
                 defaultValue= {!props.valorMudou ? 'DEFAULT' : props.valor}
                 // defaultValue= {!"DEFAULT" ? '' : props.valor}
-
+                required
             >
-                <option value="DEFAULT" disabled>Escolha uma das opções ...</option>
+                <option value="" disabled>Escolha uma das opções ...</option>
                 <option value="Pendente" >Pendente</option>
                 <option value="Concluido" >Concluido</option>
                 <option value="Cancelado" >Cancelado</option>
