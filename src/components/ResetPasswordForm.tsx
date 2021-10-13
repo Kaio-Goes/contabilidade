@@ -47,11 +47,11 @@ const ResetPasswordForm: React.FC = () => {
                         type="email"
                         name="email"
                         {...register('email', {
-                            required: 'Por favor entre com seu e-mail',
+                            required: 'Preencha todos os campos',
                             pattern: {
                                 value:
                                     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                message: 'E-mail não é válido',
+                                message: 'Preencha todos os campos',
                             },
                         })}
                     />

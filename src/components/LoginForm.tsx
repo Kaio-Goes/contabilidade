@@ -21,7 +21,7 @@ const LoginForm: React.FC = () => {
 
     // useEffect(() => {
     //     if (user) {
-    //         push('/processo');
+    //         push('/servicos');
     //     }
     // }, [user, push]);
 
@@ -42,7 +42,7 @@ const LoginForm: React.FC = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
             {error?.message && (
                 <div className="p-2 mb-4 text-center text-red-500 border border-red-600 border-dashed rounded">
-                    <span>{error.message}</span>
+                    <span>Dados incorretos</span>
                 </div>
             )}
             <div className="rounded-md">
@@ -59,11 +59,11 @@ const LoginForm: React.FC = () => {
                         type="email"
                         name="email"
                         {...register('email', {
-                            required: 'Por favor insira o e-mail',
+                            required: '',
                             pattern: {
                                 value:
                                     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                                message: 'E-mail não é válido',
+                                message: '',
                             },
                         })}
                     />
@@ -88,10 +88,10 @@ const LoginForm: React.FC = () => {
                         type="password"
                         name="password"
                         {...register('password', {
-                            required: 'Por favor digite sua senha',
+                            required: 'Preencha todos os campos',
                             minLength: {
                                 value: 6,
-                                message: 'É permitido no mínimo 6 caracteres',
+                                message: '',
                             },
                         })}
                     />
