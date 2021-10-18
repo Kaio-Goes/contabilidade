@@ -17,7 +17,7 @@ export default class Servico {
     }
 
     static vazio() {
-        return new Servico('', '', '','', 'DEFAULT')
+        return new Servico('', '', '','', 'Pendente')
     }
 
     get id() {
