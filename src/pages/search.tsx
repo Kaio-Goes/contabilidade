@@ -21,32 +21,45 @@ export default function SearchNum(props: SearchNumProcesso) {
     let [bira, setBira] = useState({})
 
     const alo = function (numero) {
+        if (search.length === 0){
+            return window.alert("Preencha todos os campos")
+        }
+        // else if (numero == setBira(bira)){
+        //     return window.alert('AAaa')
+        // }
+        
         const query = db.collection("Servicos").where('Numero_Servico', "==", numero).get()
             .then((querySnapshot) => {
                 // let user
-
+                
                 querySnapshot.forEach((doc) => {
-                    console.log(doc.id, '=>', doc.data(), '=>', numero)
                     setBira(doc.data())
-
-                    // (user = doc.data())
+                    // console.log(doc.id, '=>', doc.data({}), '=>', numero)
+                    // Object.keys(bira).forEach(function (prop){
+                    //     delete bira[prop]
+                    // })
+                    // (user = do   c.data())
                     // return user;
                 })
             })
-        return query
-    }
+            
+            // if( Object.keys(bira).length === 0){
+            //     window.alert('O número de serviço está errado ou não existe')
+            // }
+            
+            // for ( const prop of Object.keys(bira)){
+            //     delete bira[prop]
+            //     console.log(bira)
+            // }
 
-    // async searchNumProcesso(formulario: number): Promise<any> {
-    //     const query = await db.collection("Servicos").where('Numero_Servico', "!=", formulario).get()
-    //         .then((querySnapshot) => {
-    //             querySnapshot.forEach((doc) => {
-    //                 console.log(doc.id, '=>', doc.data())
-    //             })
-    //         })
-    //     return (
-    //         console.log(query, formulario)
-    //     )
-    // }
+            const props = Object.keys(bira)
+            for (let i = 0; i < props.length; i++){
+                delete bira[props[i]]
+            }
+
+            console.log(bira)
+
+        }
 
     return (
         <div>
@@ -70,7 +83,7 @@ export default function SearchNum(props: SearchNumProcesso) {
                     {/* <pre>{(JSON.stringify(bira, null, 1))}</pre> */}
                     <br />
                     <div>
-
+                        
                         {Object.keys(bira).map((key, i) => (
                             <table className="w-full rounded-xl overflow-hidden" key={i} >
                                 <thead className={`

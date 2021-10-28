@@ -14,8 +14,10 @@ export default function Entrada(props:  SearchProps) {
                 {props.texto}
             </label>
             <input 
+                type="number"
                 value={props.valor}
                 onChange={e => props.valorMudou?.(e.target.value)}
+                required
                 className={`
                     border border-purple-500 rounded-lg
                     focus: outline-none bg-gray-0 px-4 py-2

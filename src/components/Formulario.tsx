@@ -1,10 +1,9 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Servico from '../core/Servicos';
 import Botao from './Botao';
 import Entrada from './Entrada';
 import Status from './Status';
 // import {enviarEmail} from "../../functions/index"
-import Email from './Email';
 
 interface FormularioProps {
     formulario: Servico;
@@ -31,26 +30,54 @@ export default function Formulario(props: FormularioProps) {
     );
     const [value, setValue] = useState(props.formulario?.Status);
 
-    const validarInputs = () => {
+    const validarInputs = (numeroServico, nomeCliente, descricao, emailCliente  ) => {
         if (
             numeroServico.length === 0 ||
             nomeCliente.length === 0 ||
-            descricao.length === 0 ||
-            emailCliente.length === 0
-        ) {
-            return window.alert('Preencha todos os campos');
-        }
-        props.formularioMudou?.(
-            new Servico(
-                numeroServico,
-                nomeCliente,
-                descricao,
-                emailCliente,
-                value,
-                id
-            )
-        );
+            descricao.length === 0
+            || emailCliente.length === 0 
+            || emailCliente.indexOf('@') === -1
+            || emailCliente.indexOf('.') === -1
+            ) {
+                return window.alert('Preencha todos os campos')
+            }
+                // else if(numeroServico.length !== 0 &&
+                //     nomeCliente.length !== 0 &&
+                //     descricao.length !== 0 && emailCliente.length !== 0){
+                //     return props.formularioMudou?.(
+                //         new Servico(
+                //             numeroServico,
+                //             nomeCliente,
+                //             descricao,
+                //             emailCliente,
+                //             value,
+                //             id
+                //         )
+                //         );    
+                //     }
+                props.formularioMudou?.(
+                    new Servico(
+                        numeroServico,
+                        nomeCliente,
+                        descricao,
+                        emailCliente,
+                        value,
+                        id
+                    )
+                );
     };
+
+        // useEffect(() => {
+        //     console.log('Alguem mexeu nos values')
+        //     validarInputs(numeroServico, nomeCliente, descricao, emailCliente)
+        // }, [numeroServico, nomeCliente, descricao, emailCliente])
+
+        // useEffect(() => {
+        // let condicao = 1
+        // if( condicao != 0) {
+        //     validarInputs()
+        // }
+        // })
 
     return (
         <form>
@@ -73,15 +100,13 @@ export default function Formulario(props: FormularioProps) {
                 valorMudou={setDescricao}
                 className="mb-4"
             />
-            {/* <Entrada texto="Status" valor={status} valorMudou={setStatus} /> */}
-            <Email
+            <Entrada
                 tipo="email"
                 texto="E-mail do Cliente (exemplo@exemplo.com)"
                 valor={emailCliente}
                 valorMudou={setemailCliente}
                 className="mb-4"
-            ></Email>
-            {/* <Entrada texto="E-mail do Cliente (exemplo@exemplo.com)" valor={emailCliente} valorMudou={setemailCliente} className="mb-4" /> */}
+            />
             <Status texto="Status" valor={value} valorMudou={setValue} />
 
             {/* <form action="https://us-central1-servicos-f5c6c.cloudfunctions.net/enviarEmail" method="post">
@@ -97,7 +122,7 @@ export default function Formulario(props: FormularioProps) {
                     <button type="submit">Enviar</button>
                 </form> */}
             <div className="flex justify-center mt-3">
-                <Botao cor="blue" className="mr-2" onClick={() => validarInputs()}>
+                <Botao cor="blue" className="mr-2" onClick={() =>validarInputs(numeroServico, nomeCliente, descricao, emailCliente)}>
                     {id ? 'Alterar' : 'Salvar'}
                 </Botao>
                 <Botao onClick={props.cancelado}>Cancelar</Botao>
