@@ -16,7 +16,7 @@ export default function Formulario(props: FormularioProps) {
 
     const id = props.formulario?.id;
     const [numeroServico, setNumeroServico] = useState(
-        props.formulario?.Numero_Servico ?? ''
+        props.formulario?.Numero_Servico ?? 0
     );
     const [nomeCliente, setNomeCliente] = useState(
         props.formulario?.Nome_Cliente ?? ''
@@ -37,7 +37,7 @@ export default function Formulario(props: FormularioProps) {
             descricao.length === 0
             || emailCliente.length === 0 
             || emailCliente.indexOf('@') === -1
-            || emailCliente.indexOf('.') === -1
+            // || emailCliente.indexOf('.') === -1
             ) {
                 return window.alert('Preencha todos os campos')
             }

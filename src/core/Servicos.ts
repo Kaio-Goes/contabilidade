@@ -17,7 +17,7 @@ export default class Servico {
     }
 
     static vazio() {
-        return new Servico('', '', '','', 'Pendente')
+        return new Servico(`${Math.floor(Math.random() * 1000000)}`, '', '','', 'Pendente')
     }
 
     get id() {
