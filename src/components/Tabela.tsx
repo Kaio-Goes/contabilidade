@@ -41,9 +41,15 @@ export default function Tabela(props: TabelaProps) {
         })
     }
 
-    function renderizarAcoes(cliente: Servico) {
+    function renderizarAcoes(cliente: Servico) {    
+        function confirmExclusao() {
+            if(confirm("Tem certeza que deseja excluir esse serviço?")){
+                props.formularioExcluido?.(cliente)
+            }
+        }
         return (
             <td className="flex justify-center">
+                <button >sss</button>
                 {props.formularioSelecionado ? (
                     <button onClick={() => props.formularioSelecionado?.(cliente)} className={`
                     flex justify-center items-center
@@ -55,7 +61,7 @@ export default function Tabela(props: TabelaProps) {
                 ) : false}
 
                 {props.formularioExcluido ? (
-                    <button onClick={() => props.formularioExcluido?.(cliente)} className={`
+                    <button onClick={() => confirmExclusao()} className={`
                     flex justify-center items-center
                     text-red-500 rounded-full p-2 m-1
                     hover:bg-purple-50 outline-none
