@@ -49,7 +49,6 @@ export default function Tabela(props: TabelaProps) {
         }
         return (
             <td className="flex justify-center">
-                <button >sss</button>
                 {props.formularioSelecionado ? (
                     <button onClick={() => props.formularioSelecionado?.(cliente)} className={`
                     flex justify-center items-center
