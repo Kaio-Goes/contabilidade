@@ -13,7 +13,7 @@ export default function Home() {
       <Head>
         <title>MenuPrincipal</title>
       </Head>
-      <div className="min-h-screen bg-gradient-to-b from-purple-500 to-indigo-500 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-300 flex items-center justify-center">
         <div className="bg-white p-4 rounded-md">
           <div className="flex justify-center items-center">
             {User}

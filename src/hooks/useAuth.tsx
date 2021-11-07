@@ -105,8 +105,9 @@ const useAuthProvider = () => {
 
     const signOut = async () => {
         try {
-            await auth.signOut();
-            return setUser(false);
+            await auth.signOut().then(() => {
+                setUser(false);
+            });
         } catch (error) {
             return { error };
         }

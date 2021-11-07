@@ -97,7 +97,7 @@ export default function Servicos() {
       <div>
         <main className={`
       flex justify-center items-center h-screen
-      bg-gradient-to-r from-blue-400 to-purple-400
+      bg-gray-300
       text-white 
     `}>
           <Layout titulo="Lista de serviços">
