@@ -7,6 +7,7 @@ import useServico from "../hooks/useServico";
 import { Fragment, useContext, useEffect } from 'react'
 import Head from 'next/head'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
+import Image from 'next/image';
 import { useRequireAuth } from '../hooks/useRequireAuth'
 import { useAuth } from '../hooks/useAuth'
 
@@ -40,12 +41,8 @@ export default function Servicos() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="flex items-center justify-between h-16">
                 <div className="flex items-center">
-                  <div className="flex-shrink-0">
-                    <img
-                      className="h-8 w-8"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                      alt="Workflow"
-                    />
+                  <div className="flex-shrink-0 text-white">
+                    Contabildade2.0
                   </div>
                 </div>
                 <div className="hidden md:block">
