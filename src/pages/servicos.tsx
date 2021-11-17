@@ -101,7 +101,7 @@ export default function Servicos() {
             {tabelaVisivel ? (
               <>
                 <div className="flex justify-end">
-                  <Botao cor="green" className="mb-4" onClick={novoFormulario}>
+                  <Botao cor="green" className="mb-4 text-white px-4 py-2 rounded-md" onClick={novoFormulario}>
                     Novo Serviço
               </Botao>
                 </div>

@@ -49,7 +49,7 @@ export default function Formulario(props: FormularioProps) {
                 </form> */}
 
             <div className="flex justify-center mt-3">
-                <Botao cor="blue" className="mr-2" 
+                <Botao cor="blue" className="mr-2 text-white px-4 py-2 rounded-md" 
                     onClick={() => {
                         if (
                             numeroServico.length === 0 ||
@@ -73,7 +73,7 @@ export default function Formulario(props: FormularioProps) {
                         (new Servico(numeroServico, nomeCliente, descricao,emailCliente,value, id))}}>
                     {id ? 'Alterar' : 'Salvar'}
                 </Botao>
-                <Botao cor="gray" onClick={props.cancelado}>Cancelar</Botao>
+                <Botao cor="gray" className="text-white px-4 py-2 rounded-md" onClick={props.cancelado}>Cancelar</Botao>
             </div>
         </div>
     )

@@ -78,7 +78,7 @@ export default function SearchNum(props: SearchNumProcesso) {
                     <Search texto="Digite o número do Serviço" valor={search} valorMudou={setSearch} />
                     <br />
                     <div className="flex justify-center">
-                        <Botao cor="purple" onClick={() => alo(search)}>Pesquise</Botao>
+                        <Botao cor="purple" className="text-white px-4 py-2 rounded-md" onClick={() => alo(search)}>Pesquise</Botao>
                     </div>
                     {/* <pre>{(JSON.stringify(bira, null, 1))}</pre> */}
                     <br />
