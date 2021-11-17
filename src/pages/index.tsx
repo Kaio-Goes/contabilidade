@@ -27,7 +27,7 @@ export default function Home() {
               <p className="text-center text-sm text-purple-800">Pesquise o número de seu serviço</p>
             </div>
           </div>
-          <Botao className="w-60" cor="purple" onClick={() => Router.push('/search')}>Entrar</Botao>
+          <Botao className="w-60 bg-purple" cor="purple" onClick={() => Router.push('/search')}>Entrar</Botao>
         </div>
 
         <div className="p-6"></div>
@@ -45,7 +45,7 @@ export default function Home() {
               <p className="text-center text-sm text-purple-800">Administre seus serviços</p>
             </div>
           </div>
-          <Botao className="w-60" cor="purple" onClick={() => Router.push('/login')}>Login</Botao>
+          <Botao className="w-60 bg-purple" cor="purple" onClick={() => Router.push('/login')}>Login</Botao>
         </div>
 
       </div>
