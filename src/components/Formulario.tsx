@@ -73,7 +73,7 @@ export default function Formulario(props: FormularioProps) {
                         (new Servico(numeroServico, nomeCliente, descricao,emailCliente,value, id))}}>
                     {id ? 'Alterar' : 'Salvar'}
                 </Botao>
-                <Botao onClick={props.cancelado}>Cancelar</Botao>
+                <Botao cor="gray" onClick={props.cancelado}>Cancelar</Botao>
             </div>
         </div>
     )
