@@ -40,21 +40,6 @@ export default class ColecaoServico implements ServicoRepositorio {
         return query.docs.map(doc => doc.data()) ?? []
     }
 
-    // async searchNumProcesso(formulario: Number) {
-    //     // const query = db.collection("servicos").where("numProcesso", "==", formulario)
-        
-    //     const query = await db.collection("servicos").where( 'numProcesso', "!=", formulario).get()
-    //     .then((querySnapshot) => {
-    //         querySnapshot.forEach((doc) => {
-    //             console.log(doc.id, '=>', doc.data())
-    //         })
-    //     })
-    //     return (
-    //         console.log(formulario)
-    //     )
-    //     } 
-    
-
     private colecao() {
         return firebase.firestore().collection('Servicos')
         .withConverter(this.#conversor)

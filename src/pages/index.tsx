@@ -6,8 +6,6 @@ import Router from 'next/router';
 
 export default function Home() {
 
-  //const { exibirTabela, tabelaVisivel,exibirFormulario } = useTabelaOuForm()
-
   return (
     <div>
       <Head>

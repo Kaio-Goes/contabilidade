@@ -2,10 +2,7 @@ import Head from 'next/head'
 import Servico from '../core/Servicos'
 import Search from "../components/Search";
 import Botao from '../components/Botao'
-import { SearchIcon } from "../components/Icones";
-import Router from 'next/router';
-import { useEffect, useState } from 'react';
-import useServico from '../hooks/useServico'
+import { useState } from 'react';
 import { db } from '../backend/config';
 
 interface SearchNumProcesso {
@@ -16,7 +13,6 @@ interface SearchNumProcesso {
 export default function SearchNum(props: SearchNumProcesso) {
 
     const [search, setSearch] = useState('')
-    // const num = new ColecaoProcesso
 
     let [bira, setBira] = useState({})
 
@@ -24,34 +20,15 @@ export default function SearchNum(props: SearchNumProcesso) {
         if (search.length === 0){
             return window.alert("Preencha todos os campos")
         }
-        // else if (numero == setBira(bira)){
-        //     return window.alert('AAaa')
-        // }
         
         const query = db.collection("Servicos").where('Numero_Servico', "==", numero).get()
             .then((querySnapshot) => {
-                // let user
                 
                 querySnapshot.forEach((doc) => {
                     setBira(doc.data())
-                    // console.log(doc.id, '=>', doc.data({}), '=>', numero)
-                    // Object.keys(bira).forEach(function (prop){
-                    //     delete bira[prop]
-                    // })
-                    // (user = do   c.data())
-                    // return user;
                 })
             })
             
-            // if( Object.keys(bira).length === 0){
-            //     window.alert('O número de serviço está errado ou não existe')
-            // }
-            
-            // for ( const prop of Object.keys(bira)){
-            //     delete bira[prop]
-            //     console.log(bira)
-            // }
-
             const props = Object.keys(bira)
             for (let i = 0; i < props.length; i++){
                 delete bira[props[i]]
@@ -80,7 +57,6 @@ export default function SearchNum(props: SearchNumProcesso) {
                     <div className="flex justify-center">
                         <Botao cor="purple" onClick={() => alo(search)}>Pesquise</Botao>
                     </div>
-                    {/* <pre>{(JSON.stringify(bira, null, 1))}</pre> */}
                     <br />
                     <div>
                         

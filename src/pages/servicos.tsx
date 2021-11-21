@@ -4,12 +4,10 @@ import Layout from "../components/Layout";
 import Tabela from "../components/Tabela";
 import { Logout } from "../components/Icones"
 import useServico from "../hooks/useServico";
-import { Fragment, useContext, useEffect } from 'react'
+import { Fragment } from 'react'
 import Head from 'next/head'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import Image from 'next/image';
 import { useRequireAuth } from '../hooks/useRequireAuth'
-import { useAuth } from '../hooks/useAuth'
 
 export default function Servicos() {
 
@@ -24,10 +22,6 @@ export default function Servicos() {
   } = useServico()
 
   const auth = useRequireAuth()
-
-  // useEffect(() => {
-  //   api.get('/users')
-  // }, [])
 
   return (
     <div>
@@ -47,7 +41,6 @@ export default function Servicos() {
                 </div>
                 <div className="hidden md:block">
                   <div className="ml-4 flex items-center md:ml-6">
-                    {/* Profile dropdown */}
                     <Menu as="div" className="ml-3 relative">
                       {({ open }) => (
                         <>
@@ -125,29 +118,3 @@ export default function Servicos() {
     </div>
   )
 }
-
-// export const getServerSideProps: GetServerSideProps = async (context) => {
-//   const apiClient = getAPIClient(context)
-//   const { ['nextauth.token']: token } = parseCookies(context)
-
-//   if (!token) {
-//     return {
-//       redirect: {
-//         destination: '/login',
-//         permanent: false,
-
-//       }
-//     }
-//   }
-
-//   await apiClient.get('/users')
-
-//   return {
-//     props: {}
-//   }
-// }
-
-
-
-
-

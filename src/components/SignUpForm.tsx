@@ -44,12 +44,6 @@ const SignUpForm = ({  email }: Props) => {
         });
     };
 
-    // useEffect(() => {
-    //     if (user) {
-    //         push('/dashboad');
-    //     }
-    // }, [user, push]);
-
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             {error?.message && (

@@ -13,17 +13,10 @@ interface LoginData {
 
 const LoginForm: React.FC = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    // const auth = useAuth();
     const { push } = useRouter();
     const { user, signIn } = useAuth();
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
-
-    // useEffect(() => {
-    //     if (user) {
-    //         push('/servicos');
-    //     }
-    // }, [user, push]);
 
     const onSubmit = (data: LoginData) => {
         setIsLoading(true);
